@@ -46,6 +46,7 @@ if (isset($_POST)) {
             echo "no error!";
         } else {
         }
+        
     } else {
         $_SESSION["register_errors"] = $errors;
         header("Location: index.php");
