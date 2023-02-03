@@ -2,10 +2,10 @@
 session_start();
 
 
+#esto iría al .env
 $sv = "localhost";
 $un = "php_connection";
 $pw = "eustaquiomanosdetijera";
-#esto iría al .env
 $db_name = "blog_cocina";
 
 $db_connection = mysqli_connect(

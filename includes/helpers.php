@@ -8,6 +8,7 @@ function mostrarError($error, $campo)
     } 
     return $alert;
 }
+
 function clearErrors()
 {
     $_SESSION["register_errors"] = null;
