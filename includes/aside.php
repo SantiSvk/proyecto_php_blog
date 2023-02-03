@@ -18,19 +18,40 @@
 
         <h3>Regístrate</h3>
 
+        <?php if(isset($_SESSION["register_success"])):?>
+            <div class="alert-success">
+                <h3><?= $_SESSION["register_success"] ?></h3>
+            </div>
+        <?php endif;?>
+
         <form action="register.php" method="POST">
 
             <label for="username">Username</label>
-            <input type="text" name="username" required>
-            <?php echo isset($_SESSION["register_errors"]["username"]) ? mostrarError($_SESSION["register_errors"], "username") : "" ?>
+            <input type="text" name="username" required
+            style="
+                <?php echo isset($_SESSION["register_errors"]["username"]) ? 
+                "border-color: red; 
+                border-radius: 3px" : 
+                "" ?>"
+                >
 
             <label for="email">Email</label>
-            <input type="email" name="email" required>
-            <?php echo isset($_SESSION["register_errors"]["email"])    ? mostrarError($_SESSION["register_errors"], "email")    : "" ?>
+            <input type="email" name="email" required
+            style="
+                <?php echo isset($_SESSION["register_errors"]["email"]) ? 
+                "border-color: red; 
+                border-radius: 3px" : 
+                "" ?>"
+                >
 
             <label for="password">Contraseña</label>
-            <input type="password" name="password" required>
-            <?php echo isset($_SESSION["register_errors"]["password"]) ? mostrarError($_SESSION["register_errors"], "password") : "" ?>
+            <input type="password" name="password" required 
+                style="
+                <?php echo isset($_SESSION["register_errors"]["password"]) ? 
+                "border-color: red; 
+                border-radius: 3px" : 
+                "" ?>"
+                >
 
             <input type="submit" name="submit" value="Entrar">
 

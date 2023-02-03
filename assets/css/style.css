@@ -159,6 +159,11 @@ body {
 	display: block;
     padding: 5px;
 }
+.block-aside input[type="text"]::placeholder,
+.block-aside input[type="email"]::placeholder,
+.block-aside input[type="password"]::placeholder{
+	text-align: left;
+}
 
 .block-aside h3 {
 	margin: 10px 0;

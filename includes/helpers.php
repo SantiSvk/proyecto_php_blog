@@ -14,3 +14,8 @@ function clearErrors()
     $_SESSION["register_errors"] = null;
     unset($_SESSION['register_errors']);
 }
+
+function dd($str){
+    var_dump($str);
+    die();
+}

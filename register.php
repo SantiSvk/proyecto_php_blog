@@ -1,5 +1,6 @@
 <?php
 include("./includes/db.php");
+include("./includes/helpers.php");
 
 if (isset($_POST)) {
 
@@ -12,25 +13,19 @@ if (isset($_POST)) {
     $usernameRegex = "/[a-zA-Z0-9_-]{3,15}$/";
     $emailRegex = "/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/";
     $passwordRegex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/";
-
-    if (preg_match($usernameRegex, $username)) {
-        echo "<br>Username válido<br>";
-    } else {
+    
+    
+    if (!preg_match($usernameRegex, $username)) {
         $errors["username"] = "Username no válido";
     }
-
-    if (preg_match($emailRegex, $email)) {
-        echo "<br>Email válido<br>";
-    } else {
+    
+    if (!preg_match($emailRegex, $email)) {
         $errors["email"] = "Email no válido";
     }
-
-    if (preg_match($passwordRegex, $password)) {
-        echo "<br>Contraseña válida<br>";
-    } else {
+    
+    if (!preg_match($passwordRegex, $password)) {
         $errors["password"] = "Contraseña no válida";
     }
-
 
     if (count($errors) == 0) {
         #insertar user db
@@ -40,23 +35,17 @@ if (isset($_POST)) {
                 PASSWORD_BCRYPT,
                 ["cost" => 10]
             );
-            $sql_query = "INSERT INTO users VALUES(NULL, '$username', '$email', '$secPassword', NULL )";
+            $sql_query = "INSERT INTO users VALUES(NULL, '$username', '$email', '$secPassword', 'date()' )";
             $save = mysqli_query($db_connection, $sql_query);
+            $_SESSION["register_success"] = "Usuario creado satisfactoriamente!";
+            
         } catch (Exception $e) {
+            
             $_SESSION["register_errors"]["insert"] = "<br> Fallo al coso del coso!! <br>";
-            echo "<br>" . $_SESSION["register_errors"]["insert"] . "<br>";
+        
         }
     } else {
         $_SESSION["register_errors"] = $errors;
-        header("Location: index.php");
     }
+    header("Location: index.php");
 }
-
-
-var_dump($username);
-echo "<br>";
-var_dump($secPassword);
-echo "<br>";
-var_dump($email);
-echo "<br>";
-var_dump($errors);
