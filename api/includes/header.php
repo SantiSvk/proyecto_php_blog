@@ -32,8 +32,16 @@
                 <li><a href="index.php"> Categoría 5 </a></li>
                 <li><a href="index.php"> Sobre Mí </a></li>
                 <li><a href="index.php"> Contacto </a></li>
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <li class="welcome">
+                        <h3>Hola <?= $_SESSION['user']['username'] ?></h3>
+                    </li>
+                <?php endif; ?>
+
 
             </ul>
+
         </nav>
+
         <div class="clearfix"></div>
     </header>

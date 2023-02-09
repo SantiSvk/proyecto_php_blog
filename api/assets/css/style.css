@@ -116,13 +116,12 @@ body {
 	width: fit-content;
 	margin: 0 auto;
 	margin-top: 50px;
-    border: 1px solid black;
+	border: 1px solid black;
 }
 #ver-todas span {
 	margin: 0 auto;
 	color: white;
-    font-size: 20px;
-    
+	font-size: 20px;
 }
 
 #sidebar {
@@ -139,10 +138,8 @@ body {
 	margin: 20px auto;
 	padding: 20px;
 
-	box-shadow: 
-    0 0 1px rgba(0, 0, 0, 0.3), 
-    0 3px 7px rgba(0, 0, 0, 0.3),
-	0 0 1px #ffffff inset;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 3px 7px rgba(0, 0, 0, 0.3),
+		0 0 1px #ffffff inset;
 }
 .block-aside label,
 .block-aside input[type="text"],
@@ -157,19 +154,19 @@ body {
 	width: 90%;
 	margin-bottom: 15px;
 	display: block;
-    padding: 5px;
+	padding: 5px;
 }
 .block-aside input[type="text"]::placeholder,
 .block-aside input[type="email"]::placeholder,
-.block-aside input[type="password"]::placeholder{
+.block-aside input[type="password"]::placeholder {
 	text-align: left;
 }
 
 .block-aside h3 {
 	margin: 10px 0;
 }
-.block-aside input[type="submit"], 
-.block-aside input[type="button"]{
+.block-aside input[type="submit"],
+.block-aside input[type="button"] {
 	display: block;
 	border-radius: 3px;
 	padding: 5px 15px;
@@ -178,14 +175,13 @@ body {
 	background-color: #25232b;
 	width: fit-content;
 	margin: 0 auto;
-    border: 1px solid black;
-    cursor: pointer;
+	border: 1px solid black;
+	cursor: pointer;
 }
-#footer{
-    clear: both;
-    width: 85%;
-    margin: 0 auto;
-    padding: 30px 50px;
-    text-align: center;
-
+#footer {
+	clear: both;
+	width: 85%;
+	margin: 0 auto;
+	padding: 30px 50px;
+	text-align: center;
 }
